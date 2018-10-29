@@ -1,0 +1,40 @@
+<!-- BEGIN PAGE CONTAINER-->
+<div class="container-fluid">
+
+	<!-- BEGIN PAGE HEADER-->
+	<div class="row-fluid">
+		<div class="span12">
+			<h3 class="page-title">
+				发布详细 <small>自动化发布</small>
+			</h3>
+			<ul class="breadcrumb" id="breadcrumbNav">
+				<li><i class="icon-home"></i> <a href="javascript:void(0);">Home</a> <span class="icon-angle-right"></span></li>
+				<li><a href="javascript:void(0);" id="mb">{{mb}}</a> <span class="icon-angle-right"></span></li>
+				<li><a href="javascript:void(0);" id="sb">{{sb}}</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- END PAGE HEADER-->
+            <button type="button" class="btn green" style="float:left" onclick="showdeploy('{{sb}}')">部署:{{sb}}</button>	
+            <button type="button" class="btn red" style="float:left;margin-left:10px;" onclick="viewjobinfo('{{sb}}')">查看最近一次部署结果</button>
+	<!-- BEGIN PAGE CONTENT-->
+            <div class="modal fade"aria-hidden="true" id="showenvModel"> 
+           <!-- <div class="modal-dialog"> -->
+              <div class="modal-content">
+                <div class="modal-body" id="add_deploy_table">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="deployjob('{{sb}}')">发布</button>
+                </div>
+              </div>
+            <!--/div-->
+            <!-- /.modal-content -->
+	</div>
+     
+
+</div>
+
+<!-- END PAGE CONTAINER-->
+
+

@@ -1,0 +1,39 @@
+<div class="page-container">
+
+	<!-- BEGIN SIDEBAR -->
+
+	<div class="page-sidebar nav-collapse collapse">
+
+		<!-- BEGIN SIDEBAR MENU -->
+
+		<ul  class="page-sidebar-menu">
+
+			<li>
+				<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+				<div class="sidebar-toggler hidden-phone"></div> <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+			</li>
+
+
+			<li class="start "><a href="http://ops.main.com/"> <i class="icon-home"></i> <span class="title">Dashboard</span> <span class="selected"></span>
+
+			</a></li>
+
+
+			{% for mb in businessInfoList %}
+			    <li class="" id="{{mb.name}}"><a href="javascript:;"> <i class="icon-sitemap"></i> <span class="title">{{mb.name}}</span> <span class="arrow "></span></a>
+			    	<ul id="" class="sub-menu">
+			    		{% for sb in mb.li %}
+			    			<li id="{{sb}}"><a href="/AutoPublishedSystem/deployForm/?mb={{mb.name}}&sb={{sb}}">{{sb}}</a></li>
+			    		{% endfor %}
+			    	</ul>
+			    </li>
+			{% endfor %}
+			
+		</ul>
+
+		<!-- END SIDEBAR MENU -->
+
+	</div>
+</div>
