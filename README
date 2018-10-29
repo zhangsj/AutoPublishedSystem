@@ -3,4 +3,24 @@
 #create_time: 2018-10-29
 #desc: jenkins django前端
 # 指定用户有发布所有env的权限，否则只能发test环境
+django可使用supervisor启动
+Nginx配置
+
+server {
+        listen       80;
+        server_name dxxxxxxxxxxxxxx;
+        #charset koi8-r;
+        access_log  logs/deployaccess.log  main;
+        deny  all;
+        location  / {
+            proxy_pass http://192.168.1.245:8001/AutoPublishedSystem/;
+        }
+        location  /AutoPublishedSystem/ {
+            proxy_pass http://192.168.1.245:8001/AutoPublishedSystem/;
+        }
+        location ~ .*\.(js|css|png|jpg|woff|ttf)?$ {
+            proxy_pass http://192.168.1.245:8001;
+        }
+
+}
 
